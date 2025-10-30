@@ -10,6 +10,14 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
+# Download and apply patch for TL-WR841N v14 support
+echo "Downloading patch for TL-WR841N v14 support..."
+wget https://openwrt.org/_media/media/tplink/tl-wr841/19.07-wr841nv14-wr840nv62.zip -O patch.zip
+unzip -o patch.zip
+echo "Applying patch..."
+git apply 19.07-wr841nv14-wr840nv6.2.patch
+echo "Patch applied successfully!"
+
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
